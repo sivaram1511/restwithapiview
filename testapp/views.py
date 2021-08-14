@@ -19,10 +19,13 @@ from rest_framework.generics import ListAPIView,CreateAPIView,RetrieveAPIView,Up
        # if name is not None:
         #    qs=qs.filter(ename__icontains=name)
         #return qs
-class EmployeeCreateAPIView(CreateAPIView):
-    queryset = Employee.objects.all()
-    serializer_class = EmployeeSerializer
-
+#class EmployeeCreateAPIView(CreateAPIView):
+   # queryset = Employee.objects.all()
+    #serializer_class = EmployeeSerializer
+class EmployeeRetrieveAPIView(RetrieveAPIView):
+    queryset=Employee.objects.all()
+    serializer_class=EmployeeSerializer
+    lookup_field="id"
 
 #class EmployeeCreateApiView(CreateAPIView):
  #   queryset=Employee.objects.all()
