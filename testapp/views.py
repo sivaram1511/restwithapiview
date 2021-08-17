@@ -4,7 +4,10 @@ from rest_framework.response import Response
 from testapp.models import Employee
 from testapp.serializers import EmployeeSerializer
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView,CreateAPIView,RetrieveAPIView,UpdateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, \
+    ListCreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveUpdateDestroyAPIView
+
+
 # Create your views here.
 #class EmployeeListApiView(APIView):
     #def get(self,request,format=None):
@@ -22,10 +25,10 @@ from rest_framework.generics import ListAPIView,CreateAPIView,RetrieveAPIView,Up
 #class EmployeeCreateAPIView(CreateAPIView):
    # queryset = Employee.objects.all()
     #serializer_class = EmployeeSerializer
-class EmployeeRetrieveAPIView(RetrieveAPIView):
-    queryset=Employee.objects.all()
-    serializer_class=EmployeeSerializer
-    lookup_field="id"
+#class EmployeeRetrieveAPIView(RetrieveAPIView):
+   # queryset=Employee.objects.all()
+   # serializer_class=EmployeeSerializer
+    #lookup_field="id"
 
 #class EmployeeCreateApiView(CreateAPIView):
  #   queryset=Employee.objects.all()
@@ -35,6 +38,26 @@ class EmployeeRetrieveAPIView(RetrieveAPIView):
   #  serializer_class = EmployeeSerializer
   #  lookup_field = 'id'
 #class EmployeeUpdateApiView(UpdateAPIView):
- #   queryset = Employee.objects.all()
-  #  serializer_class=EmployeeSerializer
-  #  lookup_field = 'id'
+ #  queryset = Employee.objects.all()
+ #  serializer_class=EmployeeSerializer
+ #  lookup_field = 'id'
+#class EmployeeDestroyAPIView(DestroyAPIView):
+ #   queryset=Employee.objects.all()
+ #   serializer_class=EmployeeSerializer
+  #  lookup_field="id"
+class EmployeeListCreateApiView(ListCreateAPIView):
+    queryset=Employee.objects.all()
+    serializer_class=EmployeeSerializer
+
+class EmployeeRetrieveUpdateDestroyApiView(RetrieveUpdateDestroyAPIView):
+    queryset=Employee.objects.all()
+    serializer_class=EmployeeSerializer
+    lookup_field='id'
+#class EmployeeRetrieveUpdateApiView(RetrieveUpdateAPIView):
+    #serializer_class=EmployeeSerializer
+    #lookup_field='id'
+#class EmployeeRetrieveDestroyApiView(RetrieveDestroyAPIView):
+   # serializer_class = EmployeeSerializer
+   # queryset = Employee.objects.all()
+    #lookup_field='id'
+
