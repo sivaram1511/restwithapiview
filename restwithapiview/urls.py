@@ -19,7 +19,7 @@ from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('api/',views.EmployeeListApiView.as_view()),
-
+    path('api/',views.EmployeeApiView.as_view()),
     #path('api/',views.EmployeeCreateAPIView.as_view()),
     #path('api/<id>',views.EmployeeRetrieveAPIView.as_view()),
     #path('api/',views.EmployeeCreateApiView.as_view()),
