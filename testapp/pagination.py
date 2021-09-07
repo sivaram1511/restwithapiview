@@ -10,4 +10,5 @@ class MyPagination2(pagination.LimitOffsetPagination):
     offset_query_param="myoffset"
     max_limit=3
 class MyPagination3(pagination.CursorPagination):
-    Ordering='esal'
+    ordering='-esal'
+    page_size=3
