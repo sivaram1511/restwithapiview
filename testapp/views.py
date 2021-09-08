@@ -25,8 +25,9 @@ class EmployeeListApiView(APIView):
 class EmployeeApiView(ListAPIView):
     queryset=Employee.objects.all()
     serializer_class=EmployeeSerializer
-    #pagination_class=MyPagination2
+    #pagination_class=MyPagination
     pagination_class=MyPagination3
+    print("order of pages")
 
 
 
